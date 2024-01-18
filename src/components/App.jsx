@@ -4,7 +4,6 @@ import { ContactsList } from './ContactsList/ContactsList';
 import { FilterField } from './FilterField/Filter';
 import { GlobalStyle } from './GlobalStyle';
 
-
 export const App = () => {
   return (
     <>
