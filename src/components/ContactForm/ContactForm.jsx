@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { Wrapper, Form, Button } from './ContactForm.styled';
 import { addContact } from '../../redux/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from '../../redux/contactsSlice';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').required('Required'),
@@ -15,7 +16,7 @@ const validationSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
-    const contacts = useSelector((state) => state.contacts);
+    const contacts = useSelector(selectContacts); 
     const dispatch = useDispatch();
 
     const onAdd = (values) => {
